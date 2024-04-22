@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_15_025453) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_221024) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_025453) do
     t.index ["race_id"], name: "index_characters_on_race_id"
   end
 
+  create_table "class_images", force: :cascade do |t|
+    t.text "image_url"
+    t.bigint "character_class_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_class_id"], name: "index_class_images_on_character_class_id"
+  end
+
+  create_table "race_images", force: :cascade do |t|
+    t.text "image_url"
+    t.bigint "race_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["race_id"], name: "index_race_images_on_race_id"
+  end
+
   create_table "races", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,4 +54,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_025453) do
 
   add_foreign_key "characters", "character_classes"
   add_foreign_key "characters", "races"
+  add_foreign_key "class_images", "character_classes"
+  add_foreign_key "race_images", "races"
 end
