@@ -9,43 +9,28 @@
 #   end
 
 
-Race.create!([
-    {
-        name: "Dwarf",
-        
-    },
-    {
-        name: "Elf"
-    },
-    {
-        name: "Halfling"
-    },
-    {
-        name: "Gnome"
-    },
-    {
-        name: "Human"
-    },
-    {
-        name: "Half-Elf"
-    },
-    {
-        name: "Dragonborn"
-    },
-    {
-        name: "Tiefling"
-    },
-    {
-        name: "Half-Orc"
-    }
-]);
+dragonborn = Race.create({ name: "Dragonborn" })
+dwarf = Race.create({ name: "Dwarf" })
+elf = Race.create({ name: "Elf" })
+gnome = Race.create({ name: "Gnome" })
+half_elf = Race.create({ name: "Half-Elf" })
+half_orc = Race.create({ name: "Half-Orc" })
+halfling = Race.create({ name: "Halfling" })
+human = Race.create({ name: "Human" })
+tiefling = Race.create({ name: "Tiefling" })
 
-CharacterClass.create!([
-    {
-        name: "Barbarian"
-    },
-    {
-        name: "Bard",
 
-    }
-])
+
+
+barbarian = CharacterClass.create({ name: "Barbarian" });
+bard = CharacterClass.create({ name: "Bard" })
+cleric = CharacterClass.create({ name: "Cleric" })
+druid = CharacterClass.create({ name: "Druid" })
+fighter = CharacterClass.create({ name: "Fighter" })
+monk = CharacterClass.create({ name: "Monk" })
+paladin = CharacterClass.create({ name: "Paladin" })
+ranger = CharacterClass.create({ name: "Ranger" })
+rogue = CharacterClass.create({ name: "Rogue" })
+sorcerer = CharacterClass.create({ name: "Sorcerer" })
+warlock = CharacterClass.create({ name: "Warlock" })
+wizard = CharacterClass.create({ name: "Wizard" })
