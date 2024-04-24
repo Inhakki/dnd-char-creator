@@ -64,7 +64,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'
-  gem 'dotenv'
 end
 
 gem "devise", "~> 4.9"
