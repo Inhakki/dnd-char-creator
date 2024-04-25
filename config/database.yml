@@ -8,13 +8,13 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  port: <%= ENV["POSTGRES_PORT"].to_i %>
-  username: <%= ENV["POSTGRES_USERNAME"] %>
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
 
 development:
   <<: *default 
   database: dndCharCreator_development
+  port: <%= Rails.application.credentials.postgres.port %>
+  username: <%= Rails.application.credentials.postgres.username %>
+  password: <%= Rails.application.credentials.postgres.password %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
